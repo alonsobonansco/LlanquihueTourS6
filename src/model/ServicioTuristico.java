@@ -5,7 +5,7 @@ public class ServicioTuristico {
     private double duracionHoras;
 
     public ServicioTuristico(String nombre, double duracionHoras) {
-        this.nombre = nombre;
+        setNombre(nombre);
         this.duracionHoras = duracionHoras;
     }
 
@@ -14,6 +14,9 @@ public class ServicioTuristico {
     }
 
     public void setNombre(String nombre) {
+        if (nombre == null || nombre.isBlank()) {
+            throw new IllegalArgumentException("El nombre del servicio no puede estar vacío");
+        }
         this.nombre = nombre;
     }
 
@@ -25,6 +28,7 @@ public class ServicioTuristico {
         this.duracionHoras = duracionHoras;
     }
 
+    // Hay una opción con abstract
     @Override
     public String toString() {
         return nombre + " | " + duracionHoras;
