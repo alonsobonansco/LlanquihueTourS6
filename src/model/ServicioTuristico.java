@@ -1,12 +1,19 @@
 package model;
 
-public class ServicioTuristico {
+// Palabra clave abstract: en una clase, no permite instanciar objetos de su tipo.
+// Ej: ServicioTuristico st = new ServicioTuristico("Nombre", duracion); arroja error.
+/**
+ * Representa la clase genérica de servicios turísticos (superclase) que se ofrecen
+ * en la agencia de turismo Llanquihue Tour.
+ */
+public abstract class ServicioTuristico {
+
     private String nombre;
     private double duracionHoras;
 
     public ServicioTuristico(String nombre, double duracionHoras) {
         setNombre(nombre);
-        this.duracionHoras = duracionHoras;
+        setDuracionHoras(duracionHoras);
     }
 
     public String getNombre() {
@@ -25,12 +32,15 @@ public class ServicioTuristico {
     }
 
     public void setDuracionHoras(double duracionHoras) {
+        if (duracionHoras <= 0) {
+            throw new IllegalArgumentException(
+                    "La duración del servicio no puede ser menor o igual a cero horas.");
+        }
         this.duracionHoras = duracionHoras;
     }
 
-    // Hay una opción con abstract
     @Override
     public String toString() {
-        return nombre + " | " + duracionHoras;
+        return nombre + " | Duración (h): " + duracionHoras;
     }
 }

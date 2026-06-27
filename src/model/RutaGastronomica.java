@@ -1,11 +1,15 @@
 package model;
 
+/**
+ * Representa un circuito de turismo basado en paradas gastronómicas.
+ * Su atributo propio es numeroDeParadas.
+ */
 public class RutaGastronomica extends ServicioTuristico {
     private int numeroDeParadas;
 
     public RutaGastronomica(String nombre, double duracionHoras, int numeroDeParadas) {
         super(nombre, duracionHoras);
-        this.numeroDeParadas = numeroDeParadas;
+        setNumeroDeParadas(numeroDeParadas);
     }
 
     public int getNumeroDeParadas() {
@@ -13,11 +17,14 @@ public class RutaGastronomica extends ServicioTuristico {
     }
 
     public void setNumeroDeParadas(int numeroDeParadas) {
+        if (numeroDeParadas < 1) {
+            throw new IllegalArgumentException("La Ruta Gastronómica debe tener al menos una parada.");
+        }
         this.numeroDeParadas = numeroDeParadas;
     }
 
     @Override
     public String toString() {
-        return super.toString() + " | " + numeroDeParadas + "\n";
+        return super.toString() + " | Número de Paradas: " + numeroDeParadas + "\n";
     }
 }
