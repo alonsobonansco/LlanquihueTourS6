@@ -42,6 +42,7 @@ Instrucciones para clonar y ejecutar:
 1. Clonar el repositorio desde la terminal en Intellij:  
    git clone https://github.com/alonsobonansco/LlanquihueTourS6.git
 2. Marcar la carpeta `src` como "sources root" haciendo click derecho en ella
+   -> Mark Directory As -> Sources Root
 3. Ejecutar el main desde su clase en el paquete ui
 
 Repositorio Github:

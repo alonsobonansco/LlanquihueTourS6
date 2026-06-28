@@ -4,15 +4,14 @@ import model.*;
 
 /**
  * Clase encargada de crear los objetos y mostrarlos.
- * ServicioTuristico se puede instanciar como cualquiera de sus subclases (pero no a sí misma).
+ * ServicioTuristico se puede instanciar como cualquiera de sus subclases (pero no a sí misma
+ * porque es abstract).
  */
 public class GestorServicios {
     private ServicioTuristico ruta1;
     private ServicioTuristico ruta2;
-
     private ServicioTuristico paseo1;
     private ServicioTuristico paseo2;
-
     private ServicioTuristico excursion1;
     private ServicioTuristico excursion2;
 
